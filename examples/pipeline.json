@@ -1,0 +1,29 @@
+{
+  "schema": {
+    "cost": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "quantity": {
+      "type": "int",
+      "required": true
+    }
+  },
+  "filters": [
+    {
+      "field": "quantity",
+      "op": "ge",
+      "value": 1
+    }
+  ],
+  "aggregate": {
+    "group_by": [
+      "team"
+    ],
+    "sum": [
+      "cost",
+      "quantity"
+    ]
+  }
+}

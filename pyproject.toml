@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+[project]
+name = "datacraft"
+version = "0.1.0"
+description = "Validated streaming file pipelines with exact decimal aggregation"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = []
+[project.optional-dependencies]
+excel = ["openpyxl>=3.1.5,<4"]
+dev = ["pytest>=8,<10", "ruff>=0.12,<1"]
+[project.scripts]
+datacraft = "datacraft.cli:main"
+[tool.ruff]
+line-length = 100
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

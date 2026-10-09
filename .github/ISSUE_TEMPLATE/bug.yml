@@ -1,0 +1,14 @@
+name: Bug report
+description: Report a reproducible pipeline defect
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproducer
+      description: Supply synthetic input, configuration, command and expected result.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Python version and OS
